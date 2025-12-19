@@ -9,11 +9,11 @@ const Admin = () => {
 
   useEffect(() => {
     axios
-      .get("https://real-trust-full-stack.onrender.com/api/contact")
+      .get("https://real-trust-full-stack-1.onrender.com/api/contact")
       .then((res) => setContacts(res.data));
 
     axios
-      .get("https://real-trust-full-stack.onrender.com/api/subscribe")
+      .get("https://real-trust-full-stack-1.onrender.com/api/subscribe")
       .then((res) => setSubscribers(res.data));
   }, []);
 

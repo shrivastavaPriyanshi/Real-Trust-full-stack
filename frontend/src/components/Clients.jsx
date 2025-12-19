@@ -6,7 +6,7 @@ const Clients = () => {
 
   useEffect(() => {
     axios
-      .get("https://real-trust-full-stack.onrender.com/api/clients")
+      .get("https://real-trust-full-stack-1.onrender.com/api/clients")
       .then((res) => setClients(res.data))
       .catch((err) => console.error(err));
   }, []);

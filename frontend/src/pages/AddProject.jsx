@@ -23,7 +23,7 @@ const AddProject = () => {
   };
 
   const handleSubmit = async () => {
-    await axios.post("https://real-trust-full-stack.onrender.com/api/projects", {
+    await axios.post("https://real-trust-full-stack-1.onrender.com/api/projects", {
       image: croppedImage,
       name,
       description,

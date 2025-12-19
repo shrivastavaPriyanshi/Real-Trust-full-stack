@@ -6,7 +6,7 @@ const Projects = () => {
 
   useEffect(() => {
     axios
-      .get("https://real-trust-full-stack.onrender.com/api/projects")
+      .get("https://real-trust-full-stack-1.onrender.com/api/projects")
       .then((res) => setProjects(res.data))
       .catch((err) => console.error(err));
   }, []);
