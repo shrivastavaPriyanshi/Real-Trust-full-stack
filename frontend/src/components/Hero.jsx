@@ -19,7 +19,7 @@ const Hero = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/contact", formData);
+      await axios.post("https://real-trust-full-stack.onrender.com/api/contact", formData);
       alert("Form submitted successfully ✅");
       setFormData({
         fullName: "",

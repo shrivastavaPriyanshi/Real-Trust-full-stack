@@ -9,7 +9,7 @@ const Navbar = () => {
     if (!email) return alert("Enter email");
 
     try {
-      await axios.post("http://localhost:5000/api/subscribe", { email });
+      await axios.post("https://real-trust-full-stack.onrender.com/api/subscribe", { email });
       alert("Subscribed ✅");
       setEmail("");
     } catch (err) {
