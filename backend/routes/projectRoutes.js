@@ -2,24 +2,13 @@ const express = require("express");
 const router = express.Router();
 const Project = require("../models/Project");
 
-// ADD PROJECT (Admin)
-router.post("/", async (req, res) => {
-  try {
-    const project = new Project(req.body);
-    await project.save();
-    res.status(201).json(project);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-
-// GET ALL PROJECTS (Landing Page)
 router.get("/", async (req, res) => {
   try {
-    const projects = await Project.find().sort({ createdAt: -1 });
-    res.json(projects);
+    const projects = await Project.find();
+    res.status(200).json(projects);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error("Projects fetch error:", error);
+    res.status(500).json({ message: "Failed to fetch projects" });
   }
 });
 
