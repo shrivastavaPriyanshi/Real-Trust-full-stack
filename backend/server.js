@@ -21,7 +21,7 @@ app.use(express.json());
 app.use("/api/projects", require("./routes/projectRoutes"));
 app.use("/api/clients", require("./routes/clientRoutes"));
 app.use("/api/contact", require("./routes/contactRoutes"));
-app.use("/api/subscribe", require("./routes/subscribeRoutes"));
+app.use("/api/subscribe", require("./routes/subscriberRoutes"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
