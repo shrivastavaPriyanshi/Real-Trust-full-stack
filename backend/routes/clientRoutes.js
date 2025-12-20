@@ -12,6 +12,29 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  const updated = await Client.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+  res.json(updated);
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const deletedClient = await Client.findByIdAndDelete(req.params.id);
+
+    if (!deletedClient) {
+      return res.status(404).json({ message: "Client not found" });
+    }
+
+    res.status(200).json({ message: "Client deleted successfully" });
+  } catch (error) {
+    console.error("Delete client error:", error);
+    res.status(500).json({ message: "Failed to delete client" });
+  }
+});
+
+
 router.post("/", async (req, res) => {
   try {
     const { name, designation, description, image } = req.body;

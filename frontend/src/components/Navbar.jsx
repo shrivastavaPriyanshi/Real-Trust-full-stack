@@ -9,7 +9,10 @@ const Navbar = () => {
     if (!email) return alert("Enter email");
 
     try {
-      await axios.post("https://real-trust-full-stack-1.onrender.com/api/subscribe", { email });
+      await axios.post(
+        "https://real-trust-full-stack-1.onrender.com/api/subscribe",
+        { email }
+      );
       alert("Subscribed ✅");
       setEmail("");
     } catch (err) {
@@ -35,8 +38,8 @@ const Navbar = () => {
         justify-between
       "
     >
-      {/* LOGO + NAME */}
-      <div className="flex items-center gap-2 cursor-pointer">
+      {/* LOGO */}
+      <a href="#home" className="flex items-center gap-2 cursor-pointer">
         <img
           src={logo}
           alt="Real Trust Logo"
@@ -45,14 +48,21 @@ const Navbar = () => {
         <h1 className="text-2xl font-bold text-blue-900">
           Real Trust
         </h1>
-      </div>
+      </a>
 
       {/* MENU */}
       <ul className="flex gap-10 text-lg font-semibold text-blue-900">
-        {["Home", "Services", "Projects", "Testimonials", "Contact"].map(
-          (item) => (
-            <li
-              key={item}
+        {[
+          { name: "Home", link: "#home" },
+          { name: "About", link: "#about" },
+          { name: "Services", link: "#services" },
+          { name: "Projects", link: "#projects" },
+          { name: "Testimonials", link: "#testimonials" },
+          { name: "Contact", link: "#contact" },
+        ].map((item) => (
+          <li key={item.name}>
+            <a
+              href={item.link}
               className="
                 relative
                 cursor-pointer
@@ -74,24 +84,15 @@ const Navbar = () => {
                 rounded
               "
             >
-              {item}
-            </li>
-          )
-        )}
+              {item.name}
+            </a>
+          </li>
+        ))}
 
-        {/* ADMIN LINK */}
+        {/* ADMIN */}
         <li
-          onClick={() => window.location.href = "/admin"}
-          className="
-            relative
-            cursor-pointer
-            transition-all
-            duration-300
-            hover:text-red-600
-            px-2
-            py-1
-            rounded
-          "
+          onClick={() => (window.location.href = "/admin-login")}
+          className="cursor-pointer hover:text-blue-900"
         >
           Admin
         </li>

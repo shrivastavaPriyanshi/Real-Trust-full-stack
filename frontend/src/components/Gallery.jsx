@@ -4,8 +4,8 @@ const Gallery = () => {
       {/* ⬆️ py-40 → py-24 (LESS HEIGHT) */}
 
       {/* Grey bubbles */}
-      <div className="absolute top-24 left-24 w-48 h-48 bg-gray-100 rounded-full opacity-70"></div>
-      <div className="absolute bottom-16 right-32 w-36 h-36 bg-gray-100 opacity-60"></div>
+      <div className="absolute top-24 left-24 w-48 h-48 bg-gray-100 rounded-full opacity-80"></div>
+      <div className="absolute bottom-16 right-32 w-36 h-36 bg-gray-100 opacity-80"></div>
 
       {/* CENTERED container */}
       <div className="relative max-w-[1200px] mx-auto h-[520px]">
